@@ -28,6 +28,11 @@ const userSchema = new Schema(
         trim: 'true',
         unique: 'true',
       },
+      username: {
+        type: String,
+        required: ['true', 'Username is required.'],
+
+      },
       passwordHash: {
         type: String,
         required: ['true', 'Password is required.'],
