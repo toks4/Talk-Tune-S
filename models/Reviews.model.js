@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 
 const reviewsSchema = new Schema(
   {
-    Score: {
+    Rating: {
       type: Number,
       required: true
     },
