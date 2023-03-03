@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 const User = require('../models/User.model')
 const { isAuthenticated } = require('../middlewares/jwt.middleware')
 
@@ -15,7 +16,8 @@ router.post('/signup', async (req, res, next) => {
     // Create the User
     console.log(req.body)
   
-    await User.create({ username: req.body.username, passwordHash: hashedPassword })
+    await User.create({ firstname: req.body.firstname, lastname: req.body.lastname, birthday: req.body.birthday,
+       city: req.body.city, country: req.body.country, email: req.body.country, passwordHash: hashedPassword })
   
     res.status(201).json({ message: 'User created' })
   }) 
@@ -44,12 +46,12 @@ router.post('/signup', async (req, res, next) => {
   }
   })
 
-  router.get('/verify', isAuthenticated, (req, res, next) => {
+ router.get('/verify', isAuthenticated, (req, res, next) => {
     // You need to use the middleware there, if the request passes the middleware, it means your token is good
     if (req.payload) {
       res.json(req.payload.data.user)
     }
-  })
+  }) 
 
 
 module.exports = router
