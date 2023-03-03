@@ -2,7 +2,7 @@ const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User.model')
-const { isAuthenticated } = require('../middlewares/jwt.middleware')
+const isAuthenticated = require('../middlewares/isAuthenticated')
 
 
 router.get('/', (req, res, next) => {
@@ -17,7 +17,7 @@ router.post('/signup', async (req, res, next) => {
     console.log(req.body)
   
     await User.create({ firstname: req.body.firstname, lastname: req.body.lastname, birthday: req.body.birthday,
-       city: req.body.city, country: req.body.country, email: req.body.country, passwordHash: hashedPassword })
+       city: req.body.city, country: req.body.country, username: req.body.username, email: req.body.email, passwordHash: hashedPassword })
   
     res.status(201).json({ message: 'User created' })
   }) 
