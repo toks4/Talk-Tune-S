@@ -38,6 +38,7 @@ router.post('/signup', async (req, res, next) => {
       process.env.TOKEN_SECRET
     )
     res.json({ authToken })
+    
   } else {
     res.status(403).json({ message: 'Wrong password' })
   }
