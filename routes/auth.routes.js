@@ -5,6 +5,7 @@ const User = require('../models/User.model')
 const isAuthenticated = require('../middlewares/isAuthenticated')
 
 
+
 router.get('/', (req, res, next) => {
     res.json('All good in auth')
 })
@@ -21,6 +22,8 @@ router.post('/signup', async (req, res, next) => {
   
     res.status(201).json({ message: 'User created' })
   }) 
+
+ 
 
   router.post('/login', async (req, res, next) => {
     /* Get back the payload from your request, as it's a POST you can access req.body */
@@ -53,6 +56,20 @@ router.post('/signup', async (req, res, next) => {
       res.json(req.payload.data.user)
     }
   }) 
+
+
+  
+
+
+ // router.delete('/podcast/', async (req, res, next) =>{
+   // const name = req.params.podcast
+   // const deletedPodcast = await Podcast.findByIdAndDelete(name)
+   // res.json(deletedPodcast)
+
+  //})
+
+
+  
 
 
 module.exports = router
