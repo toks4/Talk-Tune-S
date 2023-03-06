@@ -14,7 +14,7 @@ const podcastSchema = new Schema(
             type: [String],
             enum: ['business', 'comedy', 'news', 'science', 'relationship', 'travel',
                    'sports', 'culture', 'education', 'tech', 'mindset', 'health/fitness',
-                   'history', 'art', ],
+                   'history', 'art', 'meditation' ],
             required: true,
         },
         podcastimage: {
