@@ -1,7 +1,8 @@
 
-const router = require('express').Router();
+/*const router = require('express').Router();
 const axios = require('axios');
-require('dotenv').config();  //Is required to read .env file 
+require('dotenv').config(); 
+ //Is required to read .env file 
 
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
@@ -9,11 +10,10 @@ const redirect_uri = 'https://localhost:5173/';
 
 //1. GET ACCESS TOKEN FROM SPOTIFY API (https:developer.spotify.com/documentation/general/guides/authorization/client-credentials/)
 //SUCCESSFUL RESPONSE LOOKS LIKE THIS USE 'access_token' in step 2
-// {
-//   "access_token": "NgCXRKc...MzYjw",
-//   "token_type": "bearer",
-//     "expires_in": 3600
-// }
+ {
+  "access_token": "NgCXRKc...MzYjw",
+  "token_type": "bearer",
+  "expires_in": 3600/ };
 
 let token;
 
@@ -22,15 +22,15 @@ let token;
    headers: {
      Authorization: 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
    },
-   form: {
+    form: {
    grant_type: 'client_credentials'
   },
-  json: true
+ json: true
 };
 
-axios.post(authOptions)
+  axios.post(authOptions)
   .then(response => {
-    token = response.data.access_token;
+  token = response.data.access_token;
     fetchShows();
   })
   .catch(error => {
@@ -74,7 +74,7 @@ axios.post(authOptions)
     fetchShows();
   });
   
-module.exports = router;
+module.exports = router;*/
 
 /* const SpotifyWebApi = require('spotify-web-api-node')
 require('dotenv').config();  Is required to read .env file 

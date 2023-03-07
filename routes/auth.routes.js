@@ -4,6 +4,12 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/User.model')
 const isAuthenticated = require('../middlewares/isAuthenticated')
 
+//onst auth = require('../middlewares/auth')
+
+
+
+
+
 
 
 router.get('/', (req, res, next) => {
@@ -56,8 +62,6 @@ router.post('/signup', async (req, res, next) => {
     }
   }) 
 
-
-  
 
 
  // router.delete('/podcast/', async (req, res, next) =>{

@@ -16,7 +16,7 @@ router.post('/podcast', async(req, res) => {
 })
 
 
-router.put('/podcast/:podcastId', async (req, res, next) => {
+router.put('/podcast/:podcastId', async (req, res,) => {
     const{podcast} = req.params
     const updatePodcastData = req.body
    const updatePodcast = await Podcast.findByIdAndUpdate(podcastId, updatePodcastData,{new: true})
@@ -24,7 +24,7 @@ router.put('/podcast/:podcastId', async (req, res, next) => {
   })
 
 
-router.delete('/podcast/:podcastId', async (req, res, next) => {
+router.delete('/podcast/:podcastId', async (req, res,) => {
     const { podcastId } = req.params
     try {
       // Delete one podcast
