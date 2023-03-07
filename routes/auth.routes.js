@@ -36,12 +36,11 @@ router.post('/signup', async (req, res, next) => {
     const authToken = jwt.sign(
       {
         exp: Math.floor(Date.now() / 1000) + 60 * 60,
-        data: { user: { username: currentUser.username } },
+        data: { user: matchedUsers[0] },
       },
       process.env.TOKEN_SECRET
     )
-    res.json({ authToken })
-    
+    res.json({ authToken, user: matchedUsers[0] })
   } else {
     res.status(403).json({ message: 'Wrong password' })
   }
@@ -53,6 +52,7 @@ router.post('/signup', async (req, res, next) => {
  router.get('/verify', isAuthenticated, (req, res, next) => {
     // You need to use the middleware there, if the request passes the middleware, it means your token is good
     if (req.payload) {
+        console.log(req.payload)
       res.json(req.payload.data.user)
     }
   }) 

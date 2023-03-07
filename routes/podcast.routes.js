@@ -1,5 +1,4 @@
-
-const router = require('express').Router();
+/*const router = require('express').Router();
 const axios = require('axios');
 require('dotenv').config();  //Is required to read .env file 
 
@@ -75,7 +74,7 @@ axios.post(authOptions)
   });
   
 module.exports = router;
-
+*/
 /* const SpotifyWebApi = require('spotify-web-api-node')
 require('dotenv').config();  Is required to read .env file 
 const router = require('express').Router()
