@@ -11,9 +11,9 @@ const reviewsSchema = new Schema(
       type: String,
       required: true
     },
-    User: {
+    Podcast: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Podcast',
       }
   },
   {
