@@ -17,7 +17,13 @@ router.post('/podcast', async(req, res) => {
 })
 
 
-router.put('/podcast/:podcastId', async (req, res, next) => {
+router.get('/podcast/:podcastId', async (req, res, next) => {
+    const{ podcastId } = req.params
+   const updatePodcast = await Podcast.findById(podcastId)
+   res.status(200).json(updatePodcast)
+  })
+
+  router.put('/podcast/:podcastId', async (req, res, next) => {
     const{ podcastId } = req.params
     const updatePodcastData = req.body
    const updatePodcast = await Podcast.findByIdAndUpdate(podcastId, updatePodcastData,{new: true})
