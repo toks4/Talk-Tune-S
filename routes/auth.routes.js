@@ -21,9 +21,21 @@ router.post('/signup', async (req, res, next) => {
        city: req.body.city, country: req.body.country, username: req.body.username, email: req.body.email, passwordHash: hashedPassword })
   
     res.status(201).json({ message: 'User created' })
-  }) 
 
- 
+})
+
+router.post('/user/:id', isAuthenticated, async (req, res, next) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate({  firstname: req.body.firstname, lastname: req.body.lastname, birthday: req.body.birthday,
+        city: req.body.city, country: req.body.country, username: req.body.username, email: req.body.email, passwordHash: hashedPassword}, { new: true })
+    
+    res.json(updatedUser)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'An error occurred' })
+  }
+})
+
 
   router.post('/login', async (req, res, next) => {
     /* Get back the payload from your request, as it's a POST you can access req.body */

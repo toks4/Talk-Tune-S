@@ -8,14 +8,14 @@ const podcastSchema = new Schema(
         },
         podcastdescription: {
             type: String,
-            required: true,
+            
         },
         podcastcategory: {
             type: [String],
             enum: ['business', 'comedy', 'news', 'science', 'relationship', 'travel',
                    'sports', 'culture', 'education', 'tech', 'mindset', 'health/fitness',
                    'history', 'art', 'meditation' ],
-            required: true,
+          
         },
         podcastimage: {
             type: String, 
@@ -23,20 +23,16 @@ const podcastSchema = new Schema(
         },
         podcastaudio: {
             type: String,
-            required: true,
         },
         episodename: {
-            type: Number,
-            required: true,
+            type: String,
         },
         episodedescription: {
             type: String,
-            required: true,
         },
         creatorname: {
             type: Schema.Types.ObjectId,
             ref: 'User',
-            required: [true, 'Creator name is required.'],
         },
         creatordescription: {
             type: String,
