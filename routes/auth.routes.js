@@ -73,15 +73,4 @@ router.post('/user/:id', isAuthenticated, async (req, res, next) => {
   
 
 
- // router.delete('/podcast/', async (req, res, next) =>{
-   // const name = req.params.podcast
-   // const deletedPodcast = await Podcast.findByIdAndDelete(name)
-   // res.json(deletedPodcast)
-
-  //})
-
-
-  
-
-
 module.exports = router

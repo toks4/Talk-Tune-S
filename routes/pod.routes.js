@@ -32,16 +32,24 @@ router.get('/podcast/:podcastId', async (req, res, next) => {
 
 
 router.delete('/podcast/:podcastId', async (req, res, next) => {
-    const { podcastId } = req.params
-    try {ç
-      n
+    const{ podcastId } = req.params
+    try {
+      
       // Delete one podcast
-      await podcast.findByIdAndDelete(podcastId)
+      await Podcast.findByIdAndDelete(podcastId)
       res.json({ message: 'podcast deleted properly' })
     } catch (error) {
       console.log(error)
     }
   })
+
+
+ // router.delete('/podcast/', async (req, res, next) =>{
+   // const name = req.params.podcast
+   // const deletedPodcast = await Podcast.findByIdAndDelete(name)
+   // res.json(deletedPodcast)
+
+  //})
 
 
 module.exports = router
