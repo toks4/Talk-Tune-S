@@ -4,7 +4,6 @@ const podcastSchema = new Schema(
     {
         podcastname: {
             type: String,
-            required: [true, 'Podcast name is required.'],
         },
         podcastdescription: {
             type: String,
@@ -12,14 +11,12 @@ const podcastSchema = new Schema(
         },
         podcastcategory: {
             type: [String],
-            enum: ['business', 'comedy', 'news', 'science', 'relationship', 'travel',
-                   'sports', 'culture', 'education', 'tech', 'mindset', 'health/fitness',
-                   'history', 'art', 'meditation' ],
+            enum: ['business', 'comedy', 'news', 'science', 'sports', 'culture', 'education', 'tech', 'mindset', 'health/fitness',
+                   'history', 'arts', 'tv/film', 'music', 'fiction', 'truecrime', 'religion/spirituality' ],
           
         },
         podcastimage: {
             type: String, 
-            required: true,
         },
         podcastaudio: {
             type: String,
@@ -37,6 +34,8 @@ const podcastSchema = new Schema(
         creatordescription: {
             type: String,
         },
+        reviews: [{type: Schema.Types.ObjectId,
+            ref: 'Reviews'}]
         
 },
 );
