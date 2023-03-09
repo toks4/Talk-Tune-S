@@ -21,13 +21,8 @@ app.use("/api", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
-<<<<<<< HEAD
 const podcastRoutes = require("./routes/podcast.routes");
 app.use("/podcast", podcastRoutes);
-=======
-const podcastRoutes = require("./routes/pod.routes");
-app.use("/pod", podcastRoutes);
->>>>>>> f1a054c7aaf1813bdb728f0907468b99b494ab02
 
 const podRoutes = require("./routes/pod.routes");
 app.use("/pod", podRoutes);
