@@ -19,12 +19,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
     "morgan": "^1.10.0",
-<<<<<<< HEAD
     "qs": "^6.11.1",
-=======
-    "multer": "^1.4.5-lts.1",
-    "multer-storage-cloudinary": "^4.0.0",
->>>>>>> f1a054c7aaf1813bdb728f0907468b99b494ab02
     "spotify-web-api-js": "^1.5.2"
   },
   "devDependencies": {
