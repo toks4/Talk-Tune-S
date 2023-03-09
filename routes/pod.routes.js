@@ -2,7 +2,6 @@ const router = require('express').Router()
 const Podcast = require('../models/Podcast.model')
 
 
-
 router.get('/podcast', async(req, res) => {
     const podcast = await Podcast.find()
     res.json(podcast)
