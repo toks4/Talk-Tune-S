@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Reviews = require ('../models/Reviews.model')
-
+const Podcast = require ('../models/Podcast.model')
 
 
 //Get podcast review
@@ -13,16 +13,18 @@ router.get('/', async (req, res, next) => {
 router.post("/addReviews", async (req, res, next) => {
     const newReviewData = req.body
     const newReview = await Reviews.create(newReviewData)
+    await Podcast.findByIdAndUpdate(req.body.podcast, {$push: {reviews: [newReview._id]}})
     res.status(201).json(newReview)
   });
 
-// Find one review route
-router.get('/:reviewId', async (req, res, next) => {
-    const { reviewId } = req.params
+// Find a review of a podcast
+router.get('/:podcastId', async (req, res, next) => {
+    const { podcastId } = req.params
     try {
       // Get one review
-      const review = await Reviews.findById(reviewId)
-      res.json(review)
+      const podcast = await Podcast.findById(podcastId).populate('reviews')
+      console.log(podcast);
+      res.json(podcast)
     } catch (error) {
       console.log(error)
     }

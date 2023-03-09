@@ -47,7 +47,7 @@ router.post('/user/:id', isAuthenticated, async (req, res, next) => {
   
     const authToken = jwt.sign(
       {
-        exp: Math.floor(Date.now() / 1000) + 60 * 60,
+        exp: Math.floor(Date.now() / 1000) + 60 * 600,
         data: { user: matchedUsers[0] },
       },
       process.env.TOKEN_SECRET
