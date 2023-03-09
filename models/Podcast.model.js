@@ -34,6 +34,8 @@ const podcastSchema = new Schema(
         creatordescription: {
             type: String,
         },
+        reviews: [{type: Schema.Types.ObjectId,
+            ref: 'Reviews'}]
         
 },
 );

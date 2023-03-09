@@ -21,14 +21,22 @@ app.use("/api", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
+<<<<<<< HEAD
 const podcastRoutes = require("./routes/podcast.routes");
 app.use("/podcast", podcastRoutes);
+=======
+const podcastRoutes = require("./routes/pod.routes");
+app.use("/pod", podcastRoutes);
+>>>>>>> f1a054c7aaf1813bdb728f0907468b99b494ab02
 
 const podRoutes = require("./routes/pod.routes");
 app.use("/pod", podRoutes);
 
 const profileRoutes = require("./routes/profile.routes");
 app.use("/profile", profileRoutes);
+
+const reviewsRoutes = require("./routes/reviews.routes");
+app.use("/reviews", reviewsRoutes);
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
