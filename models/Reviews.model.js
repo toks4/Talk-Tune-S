@@ -3,18 +3,21 @@ const { Schema, model } = require("mongoose");
 
 const reviewsSchema = new Schema(
   {
-    Rating: {
+    rating: {
       type: Number,
       required: true
     },
-    Content: {
+    content: {
       type: String,
       required: true
     },
-    Podcast: {
+    podcast: {
         type: Schema.Types.ObjectId,
         ref: 'Podcast',
-      }
+      },
+    creator: {
+      type: String
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
@@ -22,6 +25,6 @@ const reviewsSchema = new Schema(
   }
 );
 
-const Reviews = model("Reviews", userSchema);
+const Reviews = model("Reviews", reviewsSchema);
 
 module.exports = Reviews;

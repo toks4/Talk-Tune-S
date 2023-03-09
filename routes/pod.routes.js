@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const Podcast = require('../models/Podcast.model')
+const uploader = require('../middlewares/cloudinary.config');
 
 
 
@@ -14,6 +15,17 @@ router.post('/podcast', async(req, res) => {
     const newPodcast = await Podcast.create(newPodcastData)
     res.json(newPodcast)
 })
+
+/* router.post('/podcast', uploader.single("imageUrl"), async (req, res) => {
+  const audioFile = req.files.audio
+  console.log('file is: ', req.file)
+    if (!req.file) {
+      console.log("there was an error uploading the file")
+      next(new Error('No file uploaded!'));
+      return;
+    }
+
+}) */
 
 
 router.put('/podcast/:podcastId', async (req, res, next) => {
