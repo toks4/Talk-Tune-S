@@ -10,7 +10,7 @@ const userSchema = new Schema(
         type: String,
       },
       birthday: {
-        type: Number,
+        type: Date,
       },
       city: {
         type: String,

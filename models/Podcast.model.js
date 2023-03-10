@@ -11,8 +11,8 @@ const podcastSchema = new Schema(
         },
         podcastcategory: {
             type: [String],
-            enum: ['business', 'comedy', 'news', 'science', 'sports', 'culture', 'education', 'tech', 'mindset', 'health/fitness',
-                   'history', 'arts', 'tv/film', 'music', 'fiction', 'truecrime', 'religion/spirituality' ],
+            enum: ['Business', 'Comedy', 'News', 'Science', 'Sports', 'Culture', 'Education', 'Tech', 'Mindset', 'Health/Fitness',
+                   'History', 'Arts', 'Tv/Film', 'Music', 'Fiction', 'True Crime', 'Religion/Spirituality' ],
           
         },
         podcastimage: {

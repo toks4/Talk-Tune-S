@@ -5,7 +5,6 @@ const User = require('../models/User.model')
 const isAuthenticated = require('../middlewares/isAuthenticated')
 
 
-
 router.get('/', (req, res, next) => {
     res.json('All good in auth')
 })
@@ -13,12 +12,12 @@ router.get('/', (req, res, next) => {
 router.post('/signup', async (req, res, next) => {
     // Hash password
     const salt = bcrypt.genSaltSync(13)
-    const hashedPassword = bcrypt.hashSync(req.body.password, salt)
+    const passwordHash = bcrypt.hashSync(req.body.password, salt)
     // Create the User
     console.log(req.body)
   
     await User.create({ firstname: req.body.firstname, lastname: req.body.lastname, birthday: req.body.birthday,
-       city: req.body.city, country: req.body.country, username: req.body.username, email: req.body.email, passwordHash: hashedPassword })
+       city: req.body.city, country: req.body.country, username: req.body.username, email: req.body.email, passwordHash: passwordHash })
   
     res.status(201).json({ message: 'User created' })
 
