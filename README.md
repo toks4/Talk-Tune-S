@@ -48,7 +48,5 @@ Repository Link: https://github.com/toks4/Talk-Tune.git
 
 Deploy Link: https://talk-tune.netlify.app/
 
-Slides
-The url to your presentation slides
-
-Slides Link
+Slides:
+https://docs.google.com/presentation/d/15FoJXVMEwWv480FqJU42NBCF_dP8pR8ZzqRLB8m1VWo/edit#slide=id.g92701b84aa_0_442
